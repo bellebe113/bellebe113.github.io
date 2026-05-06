@@ -5,37 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Webpage Title (will show on tab) -->
     <title>Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic styling for the page */
+        /* Modern Portfolio Styling */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #ffffff;
+            color: #333333;
             line-height: 1.6;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            padding: 3rem 2rem;
             text-align: center;
+            background-color: #ffffff;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            letter-spacing: -0.02em;
         }
         nav {
-            margin: 1rem 0;
+            margin: 2rem 0 0 0;
         }
         nav a {
-            color: #fff;
+            color: #333333;
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #666666;
+            text-decoration: underline;
         }
         section {
-            padding: 2rem;
-            border-bottom: 1px solid #ddd;
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+        section p {
+            font-size: 1.125rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #666666;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #666666;
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: #fff;
+            padding: 3rem 2rem;
+            background-color: #f8f8f8;
+            color: #666666;
+            font-size: 0.875rem;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            section {
+                padding: 3rem 1rem;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
