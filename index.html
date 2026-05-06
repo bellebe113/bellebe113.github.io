@@ -102,7 +102,7 @@
     }
 
     .hero {
-      padding: 150px 0 120px;
+      padding: 150px 0 60px;
       display: grid;
       gap: 40px;
     }
@@ -111,17 +111,22 @@
       margin: 0 auto;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3rem, 5vw, 5.5rem);
-      line-height: 0.98;
+      line-height: 1.2;
       font-weight: 600;
       text-align: center;
+      display: inline-block;
+      padding: 40px 60px;
+      background: rgba(229, 181, 206, 0.25);
+      border-radius: 120px;
+      max-width: fit-content;
     }
 
     .hero-title .highlight {
-      display: inline-block;
+      display: inline;
       position: relative;
       z-index: 1;
-      padding: 0 0.35rem;
-      background: radial-gradient(circle at 50% 50%, rgba(229, 181, 206, 0.5), transparent 55%);
+      padding: 0;
+      background: none;
     }
 
     .hero-copy {
