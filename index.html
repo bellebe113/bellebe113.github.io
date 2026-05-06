@@ -6,6 +6,7 @@
     <!-- Webpage Title (will show on tab) -->
     <title>Professional Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Modern Portfolio Styling */
         html {
@@ -85,6 +86,18 @@
             color: #666666;
             font-size: 0.875rem;
         }
+        .social-media {
+            margin-top: 2rem;
+        }
+        .social-media a {
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            color: #666666;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #333333;
+        }
         /* Responsive Design */
         @media (max-width: 768px) {
             header {
@@ -102,6 +115,9 @@
             }
             section h2 {
                 font-size: 2rem;
+            }
+            .social-media a {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -172,6 +188,11 @@
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Annabelle Phan. All rights reserved.</p>
+        <div class="social-media">
+            <a href="[github-link]" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="[linkedin-link]" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="[instagram-link]" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 </body>
 </html>
