@@ -21,14 +21,8 @@
       --max-width: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -48,10 +42,7 @@
       z-index: -1;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       max-width: var(--max-width);
@@ -62,9 +53,6 @@
     header {
       position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
       z-index: 10;
       background: rgba(247, 244, 241, 0.86);
       backdrop-filter: blur(14px);
@@ -77,7 +65,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
     }
 
     .brand {
@@ -90,19 +77,15 @@
     .nav-links {
       display: flex;
       gap: 28px;
-      flex-wrap: nowrap;
       font-size: 0.98rem;
       font-weight: 500;
       color: var(--muted);
-      margin-left: auto;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 120px 0 40px;
+      padding: 120px 0 60px;
       display: grid;
       gap: 28px;
     }
@@ -121,41 +104,24 @@
       max-width: fit-content;
     }
 
-    .hero-title .highlight {
-      display: inline;
-      position: relative;
-      z-index: 1;
-      padding: 0;
-      background: none;
-    }
-
-    .hero-steps {
+    /* CUSTOM COOKIE STYLES */
+    .hero-cookie {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 18px;
-      margin: -90px 0 32px auto;
-      width: min(420px, 100%);
-      max-width: 420px;
+      justify-content: flex-end;
+      margin: -100px 0 20px auto;
+      user-select: none;
+      animation: float 6s ease-in-out infinite;
     }
 
-    .hero-steps span {
-      display: block;
-      height: 10px;
-      border-radius: 999px;
-      background: #f9e9a8;
+    .hero-cookie img {
+      width: 180px; /* Adjust size as needed */
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
     }
 
-    .hero-steps .step--short {
-      width: 65%;
-    }
-
-    .hero-steps .step--medium {
-      width: 85%;
-    }
-
-    .hero-steps .step--long {
-      width: 100%;
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
     }
 
     .hero-copy {
@@ -169,43 +135,30 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
+      margin-top: 20px;
     }
 
-    .hero-actions .link-button,
     .hero-actions .social-button {
       border-radius: 999px;
       border: 1px solid var(--border);
-      padding: 14px 24px;
       background: var(--surface);
-      color: var(--text);
-      font-weight: 500;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .hero-actions .link-button:hover,
-    .hero-actions .social-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 50px rgba(16, 16, 16, 0.08);
-      border-color: rgba(16, 16, 16, 0.12);
-    }
-
-    .hero-actions .social-button {
       width: 52px;
       height: 52px;
       display: grid;
       place-items: center;
-      padding: 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    section {
-      margin-bottom: 80px;
+    .hero-actions .social-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(16, 16, 16, 0.08);
     }
 
+    section { margin-bottom: 80px; }
     .section-heading {
       margin: 0 0 32px;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.1rem, 3vw, 3rem);
-      line-height: 1.05;
     }
 
     .grid {
@@ -217,8 +170,6 @@
     .project-card {
       min-height: 280px;
       border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
       background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.96) 100%);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
@@ -228,53 +179,6 @@
       padding: 24px;
     }
 
-    .project-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(229, 181, 206, 0.24), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(186, 111, 141, 0.14), transparent 20%);
-      pointer-events: none;
-      opacity: 0.9;
-    }
-
-    .project-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-title {
-      margin: 0 0 12px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      line-height: 1.05;
-    }
-
-    .project-description {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .splash {
-      padding: 36px 0 44px;
-      display: flex;
-      justify-content: center;
-      border-radius: 32px;
-      background: linear-gradient(135deg, rgba(229, 181, 206, 0.18), rgba(255, 255, 255, 0.8));
-      border: 1px solid rgba(16,16,16,0.06);
-      margin-top: 44px;
-    }
-
-    .splash p {
-      margin: 0;
-      max-width: 860px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
     footer {
       padding: 40px 0;
       color: var(--muted);
@@ -282,35 +186,13 @@
       text-align: center;
     }
 
-    footer span a {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(16, 16, 16, 0.12);
-    }
-
-    @media (max-width: 860px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     @media (max-width: 680px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero-cookie {
+        justify-content: center;
+        margin: 20px 0;
       }
-
-      .hero {
-        padding-top: 120px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .link-button {
-        width: 100%;
+      .hero-cookie img {
+        width: 140px;
       }
     }
   </style>
@@ -332,17 +214,22 @@
     <main>
       <section class="hero">
         <h1 class="hero-title">Hello, I'm <span class="highlight">Annabelle Phan</span>, an engineering student and a strategist.</h1>
+        
+        <!-- COOKIE IMAGE -->
+        <div class="hero-cookie" aria-hidden="true">
+          <!-- Note: If the image doesn't load, download your image and replace the src below with your-cookie-name.png -->
+          <img src="https://share.google/0pwByku4y1cZT6cya" alt="Chocolate Chip Cookie">
+        </div>
+
         <p class="hero-copy">I build thoughtful digital experiences and share the creative work I care about. This site is a refined snapshot of my work, goals, and ways to connect.</p>
+        
         <div class="hero-actions">
           <a class="social-button" href="mailto:bellephan08@gmail.com" aria-label="Email">✉️</a>
           <a class="social-button" href="https://www.linkedin.com/in/annabelle-phan-a8882b408" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.024-3.036-1.85-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.368-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.07 0-1.144.926-2.07 2.069-2.07 1.143 0 2.069.926 2.069 2.07 0 1.144-.926 2.07-2.069 2.07zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.725v20.549C0 23.229.792 24 1.771 24h20.451C23.205 24 24 23.229 24 22.274V1.725C24 .771 23.205 0 22.225 0z"/></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.024-3.036-1.85-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.368-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.07 0-1.144.926-2.07 2.069-2.07 1.143 0 2.069.926 2.069 2.07 0 1.144-.926 2.07-2.069 2.07zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.725v20.549C0 23.229.792 24 1.771 24h20.451C23.205 24 24 23.229 24 22.274V1.725C24 .771 23.205 0 22.225 0z"/></svg>
           </a>
           <a class="social-button" href="https://github.com/bellebe113" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.125-.305-.535-1.53.115-3.185 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.555 3.285-1.23 3.285-1.23.655 1.655.245 2.88.12 3.185.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.81 1.102.81 2.222 0 1.605-.015 2.896-.015 3.286 0 .32.21.695.825.577C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a class="social-button" href="https://www.instagram.com/annabelle.phan/" target="_blank" rel="noreferrer" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.75 2.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.125-.305-.535-1.53.115-3.185 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.555 3.285-1.23 3.285-1.23.655 1.655.245 2.88.12 3.185.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.81 1.102.81 2.222 0 1.605-.015 2.896-.015 3.286 0 .32.21.695.825.577C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
         </div>
       </section>
@@ -352,20 +239,20 @@
         <div class="grid">
           <article class="project-card">
             <h3 class="project-title">Task Organizer</h3>
-            <p class="project-description">A student-centered task planner that helps prioritize assignments by due date and effort. Built with clarity, responsive layout, and intuitive sorting.</p>
-            <p class="hero-copy"><a href="https://github.com/phAPCSAperiod2/final-project-bellebe113" target="_blank" rel="noreferrer">View on GitHub</a></p>
+            <p class="project-description">A student-centered task planner that helps prioritize assignments by due date and effort.</p>
+            <p><a href="https://github.com/phAPCSAperiod2/final-project-bellebe113" target="_blank">View on GitHub</a></p>
           </article>
           <article class="project-card">
             <h3 class="project-title">New York Subway Game</h3>
-            <p class="project-description">A New York subway game where players try to reach their destination on time by choosing where they need to go and planning the best route through the city’s subway system.</p>
-            <p class="hero-copy"><a href="https://github.com/bellebe113/Abstracting-Real-Objects-Project" target="_blank" rel="noreferrer">View on GitHub</a></p>
+            <p class="project-description">A game where players plan the best route through the city’s subway system.</p>
+            <p><a href="https://github.com/bellebe113/Abstracting-Real-Objects-Project" target="_blank">View on GitHub</a></p>
           </article>
         </div>
       </section>
 
       <section id="about">
         <h2 class="section-heading">About Me</h2>
-        <p class="hero-copy">I’m Annabelle, a college student majoring in electrical engineering with a passion for creating thoughtful digital experiences. Outside of technology, I find inspiration in collaging and photography, which influence my creative and user-centered approach to design. I hope to pursue a law degree in the future and use my background in engineering and design to address real-world challenges.</p>
+        <p class="hero-copy">I’m Annabelle, a college student majoring in electrical engineering with a passion for creative digital experiences and law.</p>
       </section>
 
       <section id="credentials">
@@ -373,11 +260,11 @@
         <div class="grid">
           <article class="project-card">
             <h3 class="project-title">AP Computer Science Principles</h3>
-            <p class="project-description">Completed foundational coursework in computer science, where I developed computational thinking skills through Python programming while exploring programming concepts and digital innovation through applied problem-solving and structured logic.</p>
+            <p class="project-description">Foundational coursework in Python and computational thinking.</p>
           </article>
           <article class="project-card">
             <h3 class="project-title">AP Computer Science A</h3>
-            <p class="project-description">Completed advanced programming coursework in Java, where I deepened my understanding of algorithms and object-oriented design by applying them to real programming challenges and building more structured, efficient solutions.</p>
+            <p class="project-description">Advanced programming in Java focusing on algorithms and object-oriented design.</p>
           </article>
         </div>
       </section>
@@ -385,11 +272,10 @@
       <section id="contact">
         <h2 class="section-heading">Contact Information</h2>
         <p class="hero-copy">Email: <a href="mailto:bellephan08@gmail.com">bellephan08@gmail.com</a></p>
-        <p class="hero-copy">GitHub: <a href="https://github.com/bellebe113" target="_blank" rel="noreferrer">github.com/bellebe113</a></p>
-        <p class="hero-copy">LinkedIn: <a href="https://www.linkedin.com/in/annabelle-phan-a8882b408" target="_blank" rel="noreferrer">linkedin.com/in/annabelle-phan-a8882b408</a></p>
+        <p class="hero-copy">GitHub: <a href="https://github.com/bellebe113" target="_blank">github.com/bellebe113</a></p>
+        <p class="hero-copy">LinkedIn: <a href="https://www.linkedin.com/in/annabelle-phan-a8882b408" target="_blank">linkedin.com/in/annabelle-phan-a8882b408</a></p>
       </section>
     </main>
-
     <footer>
       <span>© 2025 Annabelle Phan. All rights reserved.</span>
     </footer>
