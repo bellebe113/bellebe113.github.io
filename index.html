@@ -91,9 +91,9 @@
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 120px 0 40px;
+      padding: 60px 0 30px; /* Reduced top padding to move everything up */
       display: grid;
-      gap: 28px;
+      gap: 24px;
     }
 
     .hero-title {
@@ -118,33 +118,11 @@
       background: none;
     }
 
-    .hero-steps {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 18px;
-      margin: 40px 0 32px auto;
-      width: min(420px, 100%);
-      max-width: 420px;
-    }
-
-    .hero-steps span {
-      display: block;
-      height: 10px;
-      border-radius: 999px;
-      background: #f9e9a8;
-    }
-
-    .hero-steps .step--short { width: 45%; }
-    .hero-steps .step--medium-short { width: 65%; }
-    .hero-steps .step--medium { width: 80%; }
-    .hero-steps .step--medium-long { width: 92%; }
-    .hero-steps .step--long { width: 100%; }
-
     .hero-copy {
       max-width: 720px;
       font-size: 1.1rem;
       color: var(--muted);
+      margin: 10px 0; /* Tightened margins */
     }
 
     .hero-actions {
@@ -152,15 +130,28 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
+      margin-top: 10px;
     }
 
+    .hero-actions .link-button,
     .hero-actions .social-button {
       border-radius: 999px;
       border: 1px solid var(--border);
+      padding: 14px 24px;
       background: var(--surface);
       color: var(--text);
       font-weight: 500;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .hero-actions .link-button:hover,
+    .hero-actions .social-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(16, 16, 16, 0.08);
+      border-color: rgba(16, 16, 16, 0.12);
+    }
+
+    .hero-actions .social-button {
       width: 52px;
       height: 52px;
       display: grid;
@@ -168,16 +159,10 @@
       padding: 0;
     }
 
-    .hero-actions .social-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 50px rgba(16, 16, 16, 0.08);
-      border-color: rgba(16, 16, 16, 0.12);
-    }
-
-    section { margin-bottom: 80px; }
+    section { margin-bottom: 60px; } /* Slightly reduced bottom margin */
 
     .section-heading {
-      margin: 0 0 32px;
+      margin: 0 0 24px;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.1rem, 3vw, 3rem);
       line-height: 1.05;
@@ -203,33 +188,18 @@
       padding: 24px;
     }
 
-    .project-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(229, 181, 206, 0.24), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(186, 111, 141, 0.14), transparent 20%);
-      pointer-events: none;
-      opacity: 0.9;
+    .about-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
     }
 
-    .project-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-title {
-      margin: 0 0 12px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      line-height: 1.05;
-    }
-
-    .project-description {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.7;
+    .about-cookie {
+      width: 280px;
+      height: auto;
+      flex-shrink: 0;
+      filter: drop-shadow(0 15px 35px rgba(0,0,0,0.1));
     }
 
     footer {
@@ -241,11 +211,7 @@
 
     @media (max-width: 860px) {
       .grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 680px) {
-      .hero { padding-top: 120px; }
-      .hero-actions { flex-direction: row; justify-content: center; }
+      .about-wrapper { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -266,25 +232,18 @@
     <main>
       <section class="hero">
         <h1 class="hero-title">Hello, I'm <span class="highlight">Annabelle Phan</span>, an engineering student and a strategist.</h1>
-        
-        <div class="hero-steps" aria-hidden="true">
-          <span class="step step--short"></span>
-          <span class="step step--medium-short"></span>
-          <span class="step step--medium"></span>
-          <span class="step step--medium-long"></span>
-          <span class="step step--long"></span>
-        </div>
 
         <p class="hero-copy">I build thoughtful digital experiences and share the creative work I care about. This site is a refined snapshot of my work, goals, and ways to connect.</p>
+        
         <div class="hero-actions">
-          <a class="social-button" href="mailto:bellephan08@gmail.com" aria-label="Email">✉️</a>
-          <a class="social-button" href="https://www.linkedin.com/in/annabelle-phan-a8882b408" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <a class="social-button" href="mailto:bellephan08@gmail.com">✉️</a>
+          <a class="social-button" href="https://www.linkedin.com/in/annabelle-phan-a8882b408" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.024-3.036-1.85-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.368-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.07 0-1.144.926-2.07 2.069-2.07 1.143 0 2.069.926 2.069 2.07 0 1.144-.926 2.07-2.069 2.07zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.725v20.549C0 23.229.792 24 1.771 24h20.451C23.205 24 24 23.229 24 22.274V1.725C24 .771 23.205 0 22.225 0z"/></svg>
           </a>
-          <a class="social-button" href="https://github.com/bellebe113" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <a class="social-button" href="https://github.com/bellebe113" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.757-1.334-1.757-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.125-.305-.535-1.53.115-3.185 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.555 3.285-1.23 3.285-1.23.655 1.655.245 2.88.12 3.185.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.81 1.102.81 2.222 0 1.605-.015 2.896-.015 3.286 0 .32.21.695.825.577C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
-          <a class="social-button" href="https://www.instagram.com/annabelle.phan/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <a class="social-button" href="https://www.instagram.com/annabelle.phan/" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.75 2.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
           </a>
         </div>
@@ -308,7 +267,10 @@
 
       <section id="about">
         <h2 class="section-heading">About Me</h2>
-        <p class="hero-copy">I’m Annabelle, a college student majoring in electrical engineering with a passion for creating thoughtful digital experiences. Outside of technology, I find inspiration in collaging and photography, which influence my creative and user-centered approach to design. I hope to pursue a law degree in the future and use my background in engineering and design to address real-world challenges.</p>
+        <div class="about-wrapper">
+          <p class="hero-copy">I’m Annabelle, a college student majoring in electrical engineering with a passion for creating thoughtful digital experiences. Outside of technology, I find inspiration in collaging and photography, which influence my creative and user-centered approach to design. I hope to pursue a law degree in the future and use my background in engineering and design to address real-world challenges.</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" alt="Cookie" class="about-cookie">
+        </div>
       </section>
 
       <section id="credentials">
@@ -330,7 +292,6 @@
         <p class="hero-copy">Email: <a href="mailto:bellephan08@gmail.com">bellephan08@gmail.com</a></p>
         <p class="hero-copy">GitHub: <a href="https://github.com/bellebe113" target="_blank" rel="noreferrer">github.com/bellebe113</a></p>
         <p class="hero-copy">LinkedIn: <a href="https://www.linkedin.com/in/annabelle-phan-a8882b408" target="_blank" rel="noreferrer">linkedin.com/in/annabelle-phan-a8882b408</a></p>
-        <p class="hero-copy">Instagram: <a href="https://www.instagram.com/annabelle.phan/" target="_blank" rel="noreferrer">instagram.com/annabelle.phan</a></p>
       </section>
     </main>
     <footer>
