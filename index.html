@@ -105,18 +105,20 @@
       max-width: fit-content;
     }
 
+    /* Restored Yellow Lines to original bottom-right position */
     .hero-steps {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 12px;
-      margin: -65px 0 10px auto; 
-      width: min(300px, 100%);
+      gap: 18px;
+      margin: -90px 0 32px auto;
+      width: min(420px, 100%);
+      max-width: 420px;
     }
 
     .hero-steps span {
       display: block;
-      height: 8px;
+      height: 10px;
       border-radius: 999px;
       background: #f9e9a8;
     }
@@ -133,20 +135,20 @@
       color: var(--muted);
     }
 
-    /* ABOUT LAYOUT - Text stays left, Cookie moves right */
+    /* About Me Layout - Text Left, Cookie centered and pushed Right */
     .about-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 40px;
+      gap: 50px;
     }
 
     .about-cookie {
-      width: 280px; /* Bigger size */
+      width: 320px; /* Even bigger as requested */
       height: auto;
       flex-shrink: 0;
       filter: drop-shadow(0 15px 35px rgba(0,0,0,0.1));
-      margin-right: 40px; /* Pushes it further right from the edge */
+      margin-right: 20px;
     }
 
     .hero-actions {
@@ -196,7 +198,7 @@
 
     @media (max-width: 900px) {
         .about-wrapper { flex-direction: column; text-align: center; }
-        .about-cookie { margin-right: 0; width: 200px; }
+        .about-cookie { margin-right: 0; width: 220px; }
     }
   </style>
 </head>
@@ -218,6 +220,7 @@
       <section class="hero">
         <h1 class="hero-title">Hello, I'm <span class="highlight">Annabelle Phan</span>, an engineering student and a strategist.</h1>
         
+        <!-- Lines moved back down to original position -->
         <div class="hero-steps" aria-hidden="true">
           <span class="step step--short"></span>
           <span class="step step--medium-short"></span>
@@ -263,7 +266,6 @@
         <div class="about-wrapper">
           <p class="hero-copy">I’m Annabelle, a college student majoring in electrical engineering with a passion for creating thoughtful digital experiences. Outside of technology, I find inspiration in collaging and photography, which influence my creative and user-centered approach to design. I hope to pursue a law degree in the future and use my background in engineering and design to address real-world challenges.</p>
           
-          <!-- Cookie Image: Now much bigger and pushed to the right -->
           <img src="https://cdn-icons-png.flaticon.com/512/541/541732.png" alt="Cookie" class="about-cookie">
         </div>
       </section>
